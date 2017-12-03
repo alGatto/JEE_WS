@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/fr/ynov/gattuso/service/Instrument.java=UTF-8
+encoding//src/fr/ynov/gattuso/service/WeatherStation.java=UTF-8
+encoding//src/fr/ynov/gattuso/service/WeatherStationSOAPService.java=UTF-8
+encoding//src/fr/ynov/gattuso/service/WeatherStationSOAPServiceService.java=UTF-8
+encoding//src/fr/ynov/gattuso/service/WeatherStationSOAPServiceServiceLocator.java=UTF-8
+encoding//src/fr/ynov/gattuso/service/WeatherStationSOAPServiceServiceSoapBindingStub.java=UTF-8
