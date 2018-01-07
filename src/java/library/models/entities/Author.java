@@ -8,18 +8,33 @@ package library.models.entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Alicia
  */
+@Entity
+@Table(name="AUTHOR")
 public class Author extends Person implements Serializable {
 
+    @Id
+    @Column(name="ID")
     private static final long serialVersionUID = 1L;
     private String about;
     private String nationality;
     private TypeAuthor type;
+    @ManyToMany
+    @JoinTable(name="AUTHOR_BOOK", 
+          joinColumns=@JoinColumn(name="AUTHOR_ID"),
+          inverseJoinColumns=@JoinColumn(name="BOOK_ID"))
     private List<Book> writtenBooks;
 
     public Author() {

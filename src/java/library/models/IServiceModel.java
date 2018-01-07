@@ -6,6 +6,7 @@
 package library.models;
 
 import java.util.List;
+import javax.ejb.Local;
 import library.models.entities.Author;
 import library.models.entities.Book;
 import library.models.entities.Category;
@@ -17,6 +18,7 @@ import library.models.entities.Loan;
  * @author Alicia
  */
 
+@Local
 public interface IServiceModel {
     //Author
     public Author addAuthor(Author author);

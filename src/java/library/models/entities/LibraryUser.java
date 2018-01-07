@@ -9,18 +9,25 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.DATE;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Alicia
  */
+@Entity
 public class LibraryUser extends Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @Column(unique=true)
     private String login;
     private String password;
     private AccountType accountState;
+    @Temporal(DATE)
     private Date lastConnection;
     private Boolean isAdmin;
     private List<Loan> loans;

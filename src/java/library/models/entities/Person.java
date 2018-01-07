@@ -7,21 +7,30 @@ package library.models.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.DATE;
 
 /**
  *
  * @author Alicia
  */
+@MappedSuperclass
 public abstract class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     protected String firstName;
     protected String lastName;
     protected String gender;
     protected String profilePicture;
     protected String email;
+    @Temporal(DATE)
     protected Date birthDate;
 
     public Person() {

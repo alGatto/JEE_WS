@@ -7,7 +7,9 @@ package library.models;
 
 import java.util.Date;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import library.models.entities.Author;
 import library.models.entities.Book;
@@ -19,8 +21,10 @@ import library.models.entities.Loan;
  *
  * @author Alicia
  */
+@Stateless(name="LIBRARYUSER")
 public class IServiceModelImpl implements IServiceModel {
     
+    @PersistenceContext(name="_WS_LibraryProject")
     
     EntityManager em;
 

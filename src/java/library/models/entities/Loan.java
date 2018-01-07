@@ -7,22 +7,41 @@ package library.models.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import static javax.persistence.TemporalType.DATE;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Alicia
  */
-
+@Entity
+@Table(name="LOAN")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 public class Loan implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Temporal(DATE)
     private Date startDate;
     private int duration;
     private Boolean isReturned;
+    @ManyToOne
+    @JoinColumn(name="LIBRARYUSER")//il faut specifier la clé etrangere
     private LibraryUser user;
+    @ManyToOne
+    @JoinColumn(name="BOOK")//il faut specifier la clé etrangere
     private Book borrowedBook;
 
     public Loan() {
