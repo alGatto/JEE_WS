@@ -1,0 +1,122 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package library.models.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ *
+ * @author Alicia
+ */
+
+public class Loan implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
+    private Date startDate;
+    private int duration;
+    private Boolean isReturned;
+    private LibraryUser user;
+    private Book borrowedBook;
+
+    public Loan() {
+        super();
+    }
+
+    public Loan(Long id, Date startDate, int duration, Boolean isReturned, LibraryUser user) {
+        this.id = id;
+        this.startDate = startDate;
+        this.duration = duration;
+        this.isReturned = isReturned;
+        this.user = user;
+    }
+
+    public Loan(Long id, Date startDate, int duration, Boolean isReturned, LibraryUser user, Book borrowedBook) {
+        this.id = id;
+        this.startDate = startDate;
+        this.duration = duration;
+        this.isReturned = isReturned;
+        this.user = user;
+        this.borrowedBook = borrowedBook;
+    }    
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public Boolean getIsReturned() {
+        return isReturned;
+    }
+
+    public void setIsReturned(Boolean isReturned) {
+        this.isReturned = isReturned;
+    }
+
+    public LibraryUser getUser() {
+        return user;
+    }
+
+    public void setUser(LibraryUser user) {
+        this.user = user;
+    }
+
+    public Book getBorrowedBook() {
+        return borrowedBook;
+    }
+
+    public void setBorrowedBook(Book borrowedBook) {
+        this.borrowedBook = borrowedBook;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Loan)) {
+            return false;
+        }
+        Loan other = (Loan) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "library.entities.Loan[ id=" + id + " ]";
+    }
+    
+}
