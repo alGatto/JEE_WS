@@ -1,5 +1,7 @@
-# YNOVM
+# Library Project
 Projet JEE Webservices
 
+Système de management d'une bibliothèque.
+
 #Architecture
-![alt text](https://github.com/alGatto/YNOVM/blob/master/Archi.jpeg)
+![alt text](https://github.com/alGatto/WS_LibraryProject/blob/master/Archi.jpeg)
